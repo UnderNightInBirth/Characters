@@ -1,0 +1,301 @@
+local t = {};
+
+
+t.Mv_Atk_StdB <-
+{
+	function Init_After()
+	{
+		local player = BMvCore.GetPlayerCharaData();
+			if( player.push() )
+			{
+				BMvEff.SetHpGauge( { value=-1000 } );
+				
+				player.pop();
+			}
+			Battle_Std.EnemyGRD_Drain( 5000, 1 );
+			BMvEff.SetHpGauge( { value=-1000 } );
+	}
+	function FrameUpdate_After()
+	{
+		local player = BMvCore.GetPlayerCharaData();
+			if( player.push() )
+			{
+				BMvEff.SetHpGauge( { value=-1000 } );
+				
+				player.pop();
+			}
+	}
+}
+
+
+t.Mv_Atk_Std4C <-
+{
+	function HitInterrupt() { Battle_Std.SetThrowHitFinalize(256); }
+	function Finalize() { Battle_Std.SwitchNextMoveTable("Mv_Neutral",[256,"Mv_Atk_Std4C_Hit"]); //ƒfƒtƒH,[code,mv]...
+	}		
+}
+
+t.Mv_Atk_Std4C_Hit <-
+{
+	atkflags = def_AtkTmplFlags_Enable,
+	usepat = "4C_Hit",
+	function Init_After()
+	{
+		Battle_Std.PassHitMoveCodes(); // ƒqƒbƒg•ªŠò‚Å‚ÌMvCodeˆøŒp‚¬
+	}
+}
+
+t.Mv_Atk_Std1C <-
+{
+	function HitInterrupt() { Battle_Std.SetThrowHitFinalize(256); }
+	function Finalize() { Battle_Std.SwitchNextMoveTable("Mv_Neutral",[256,"Mv_Atk_Std1C_Hit"]); //ƒfƒtƒH,[code,mv]...
+	}		
+}
+
+t.Mv_Atk_Std1C_Hit <-
+{
+	atkflags = def_AtkTmplFlags_Enable,
+	usepat = "1C_Hit",
+	function Init_After()
+	{
+		Battle_Std.PassHitMoveCodes(); // ƒqƒbƒg•ªŠò‚Å‚ÌMvCodeˆøŒp‚¬
+	}
+}
+
+t.Mv_Atk_Std3C <-
+{
+	function HitInterrupt() { Battle_Std.SetThrowHitFinalize(256); }
+	function Finalize() { Battle_Std.SwitchNextMoveTable("Mv_Neutral",[256,"Mv_Atk_Std3C_Hit"]); //ƒfƒtƒH,[code,mv]...
+	}		
+}
+
+t.Mv_Atk_Std3C_Hit <-
+{
+	atkflags = def_AtkTmplFlags_Enable,
+	usepat = "3C_Hit",
+	function Init_After()
+	{
+		Battle_Std.PassHitMoveCodes(); // ƒqƒbƒg•ªŠò‚Å‚ÌMvCodeˆøŒp‚¬
+	}
+}
+
+
+t.Mv_Atk_Std6C <-
+{
+	function HitInterrupt() { Battle_Std.SetThrowHitFinalize(256); }
+	function Finalize() { Battle_Std.SwitchNextMoveTable("Mv_Neutral",[256,"Mv_Atk_Std6C_Hit"]); //ƒfƒtƒH,[code,mv]...
+	}		
+}
+
+t.Mv_Atk_Std6C_Hit <-
+{
+	atkflags = def_AtkTmplFlags_Enable,
+	usepat = "6C_Hit",
+	function Init_After()
+	{
+		Battle_Std.PassHitMoveCodes(); // ƒqƒbƒg•ªŠò‚Å‚ÌMvCodeˆøŒp‚¬
+	}
+}
+
+
+
+t.Mv_Atk_Air6C <-
+{
+	function Init_After() { BMvEff.AttackInfoString_Set({word="works"}); }
+	function HitInterrupt() { Battle_Std.SetThrowHitFinalize(256); }
+	function Finalize() { Battle_Std.SwitchNextMoveTable(20,[256,"Mv_Atk_Air6C_Hit"]); }		
+}
+
+t.Mv_Atk_Air6C_Hit <-
+{
+	atkflags = def_AtkTmplFlags_Enable,
+	usepat = "J6C_Hit",
+	function Init_After()
+	{
+		function Init_After() { BMvEff.AttackInfoString_Set({word="nopes"}); }
+
+		Battle_Std.PassHitMoveCodes(); // ƒqƒbƒg•ªŠò‚Å‚ÌMvCodeˆøŒp‚¬
+	}
+}
+
+
+
+
+
+
+
+
+
+
+// local normalthrows = function( param={} )
+// {
+	// local ret_tmpl = {};
+	
+	// local mvparam =
+	// {
+		// hitMv = "Mv_Neutral",
+	// }
+	
+	// switch( param.type )
+	// {
+	// case 3:
+		// mvparam.hitMv = "Mv_Atk_Std3C_Hit";
+		// break;
+	// case 4:
+		// mvparam.hitMv = "Mv_Atk_Std4C_Hit";
+		// break;
+	// case 6:
+		// mvparam.hitMv = "Mv_Atk_Std6C_Hit";
+		// break;
+	// }
+	
+	// ret_tmpl.Init_After <- function()
+	// {
+	// }
+	
+	// ret_tmpl.FrameUpdate_After <- function()
+	// {
+	// }
+	
+	// ret_tmpl.HitInterrupt <- function()
+	// {
+		// Battle_Std.SetThrowHitFinalize(256);
+	// }
+	
+	// ret_tmpl.Finalize <- function() : (mvparam)
+	// {
+		// Battle_Std.SwitchNextMoveTable("Mv_Neutral",[256,hitMv]);
+	// }
+	
+	// return ret_tmpl;
+// }
+
+// t.Mv_Atk_Std6C_Hit <- normalthrows( { type=6 } );
+// t.Mv_Atk_Std4C_Hit <- normalthrows( { type=4 } );
+// t.Mv_Atk_Std3C_Hit <- normalthrows( { type=3 } );
+
+
+
+t.Mv_Atk_StdA <-
+{
+	function Init_After()
+	{
+	
+			local s = BMvTbl.GetMvStatus();
+			
+			local mvcnt = s.MvCount;
+			
+			//if(s.CallCount==0)
+		
+			local frame = s.GetDataFrame();
+			local pat = s.GetDataPattern();
+			
+			for( local i=0; i<8; i++ )
+			{	
+				local rc2 = BMvEff.GetHanteiRect ( { check=[ _Hantei_Attack, i ], flags=_HanteiFlag_NoMukiChange | _HanteiFlag_Tool } );
+				
+					// local eff = Battle_Std.DrawHanteiRect( rc2, 0xFF4040 );
+					local eff = BMvEff.CreateObject( { datatype=1, start_pat="TR_Plus", x=rc2.x, y=rc2.y, mvname="Mv_Obj_HitboxBox" } );
+					if(eff.push())
+					{
+						BMvEff.SetObjectFlags( { flags=_ObjFlags_NoGround | _ObjFlags_ParentMove | _ObjFlags_MoveTimeStopAll } );
+						BMvEff.ObjProcFlags_Set( { flags=_ObjProcFlags_EraseParentNull|_ObjProcFlags_EraseChangeParentMv|_ObjProcFlag_EraseParentDelete } );
+
+						BMvTbl.SetLP(0,frame);
+						BMvTbl.SetLP(1,pat);
+						BMvTbl.SetLP(2,mvcnt);
+						
+						//BMvTbl.SetPrio( _CharaPrio_Near );
+						
+						eff.pop();
+					}
+			}
+			
+		
+	}
+	
+	
+}
+
+
+
+t.Mv_Skill_Romantic <-
+{
+    function Init_After()
+    {
+		    BMvTbl.SetHitCheckFlag( { type=1, val=_HitCheckFlag_Legs|Def_HitCheckFlag_LightLegs, time=255, flag=_ClearFlag_ChangeMv } ); // ‘«–³“G‚Æ¬‘«–³“G‚ÉƒXƒJ‚é
+            local enemy = BMvCore.GetNearEnemyCharaData(); // “Gî•ñ‚ð“¾‚é
+				// Battle_Std.CallAntenStopObject();
+				// BMvEff.SetStopTime( { time=def_FL_ConvertStopTime } );
+				// BMvTbl.SetPrio( _CharaPrio_Near );
+            if( enemy.push() )
+            {
+                local bs = BtlMvStd.GetBoundStatus();
+                BMvEff.AttackInfoString_Set({word="Wall Count: " + bs.WallCount});
+                enemy.pop();
+            }
+    }
+	function HitInterrupt_After()
+    {
+		    BMvTbl.SetHitCheckFlag( { type=1, val=_HitCheckFlag_Legs|Def_HitCheckFlag_LightLegs, time=255, flag=_ClearFlag_ChangeMv } ); // ‘«–³“G‚Æ¬‘«–³“G‚ÉƒXƒJ‚é
+            local enemy = BMvCore.GetNearEnemyCharaData(); // “Gî•ñ‚ð“¾‚é
+            if( enemy.push() )
+            {
+                BMvTbl.SetWallCount(0);
+                local bs = BtlMvStd.GetBoundStatus();
+                BMvEff.AttackInfoString_Set({word=bs.WallCount});
+				Battle_Std.InitVector();
+				BMvTbl.SetPattern(320);
+				BMvEff.Slowmotion_Set( { time=30, power=2600} );
+
+				BMvTbl.SetVector({ x=-600, y=-2000, addx=0, addy=100, flags=_Vector_Normal  });
+                enemy.pop();
+            }
+    }
+}
+
+
+// t.Mv_Neutral <-
+// {
+	// function FrameUpdate_After()
+	// {
+		// local enemy = BMvCore.GetEnemyCharaData();
+		// if( enemy.push() )
+		// {
+			// local epos = BMvTbl.GetPosition();
+			
+			// enemy.pop();
+		
+			// BMvEff.AttackInfoString_Set({ word="soy"} );
+			// //Battle_Std.DrawDebugRectPos( epos );
+			
+				// // local eff = BMvEff.CreateObject( { datatype=1, start_pat="TR_Stick", x=(epos.x), y=(epos.y) } );
+				// // if( eff.push() )
+				// // {
+					// // BMvTbl.SetPosition( { x=epos.x } );
+					// // BMvTbl.SetPosition( { y=epos.y} );
+					// // eff.pop();
+				// // }
+				// local eff = BMvEff.CreateObject( { datatype=1, start_pat="TR_Plus", x=epos.x, y=epos.y, mvname="Mv_Obj_HitboxBox" } );
+				// if(eff.push())
+				// {
+					// BMvEff.SetCharaColor( { color=0x000000, time=9999, type=0 } );
+					
+					// BMvTbl.SetScale( { x=1*10000, y=1*10000 } );
+					
+					// BMvTbl.SetPosition( { y=epos.y} );
+					// BMvTbl.SetPosition( { x=epos.x} );
+					
+					
+					// eff.pop();
+				// }
+			
+		// }
+		
+
+	// }
+// }
+
+HAMMER_MoveTable <- Battle_Std.MakeMoveTable( t, HAMMER_CommandTable, Def_ChrNo_Fat );
+
+__dofile__("./data/Hammer/Hammer_se_category.txt");

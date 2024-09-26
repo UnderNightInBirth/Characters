@@ -1,0 +1,5 @@
+preferredId = 28
+charaName = Hammer
+nameInternal = fatty
+stage = 1,
+bgm = Yuuya,

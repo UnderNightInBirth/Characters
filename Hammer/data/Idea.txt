@@ -1,0 +1,18 @@
+5A - 
+2A -
+5B - 
+2B - 
+5C - 
+2C - 
+
+Does a quick, short range swipe using the scarf.
+Does a quick, short range low swipe using the scarf.
+Slams the floor with an open palm. Has a ridiculous low disjoint and range.
+Moves in to do a firm elbow strike.
+Pushes forwards low with an open-palmed shove.
+
+jA - 
+jB - 
+jC - 
+
+A knee strike.
