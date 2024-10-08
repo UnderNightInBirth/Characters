@@ -1,0 +1,8 @@
+preferredId = 27
+charaName = Ingrid
+shortConst = Ing
+nameInternal = イングリッド
+//stage = 1,
+bgm = heathaze,
+bgmLoop = 0
+//isBoss = 1
