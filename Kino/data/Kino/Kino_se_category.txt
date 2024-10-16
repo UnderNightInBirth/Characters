@@ -1,0 +1,2 @@
+Battle_Std.SeTable[Def_ChrNo_Kin] = {};
+local se = Battle_Std.SeTable[Def_ChrNo_Kin];

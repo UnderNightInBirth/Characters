@@ -1,0 +1,11 @@
+[System]
+ProjectName=Kino
+[DataFile]
+FileNum= 1
+File00=Kino.ha6
+[BmpcutFile]
+FileNum= 1
+File00=Kino.cg
+[PAniFile]
+FileNum= 1
+File00=Kino.pat
