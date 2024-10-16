@@ -1,0 +1,2 @@
+charaName = Ako
+nameInternal = Ako
