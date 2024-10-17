@@ -69,6 +69,7 @@ t.Mv_Skill_66B_Add6B <-
     function Init_After()
     {
         BMvEff.PcAfterImage_Set( {  type=0, range=12, delay=4, color=0x8FAAAAFF, blendmode=0 } );
+		Battle_Std.MoveCode.AddFlag( def_MC_EnableCansel_SkilltoSkill );
     }
     function LastUpdate()
     {
