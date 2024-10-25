@@ -1,0 +1,4 @@
+# 1 Heat Haze
+File = heathaze
+IsLoop = 1
+LoopPos = 00.0

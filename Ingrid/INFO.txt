@@ -3,6 +3,5 @@ charaName = Ingrid
 shortConst = Ing
 nameInternal = イングリッド
 //stage = 1,
-bgm = heathaze,
-bgmLoop = 0
 //isBoss = 1
+numerics = grpdat\Cockpit\chara\gauge_chrINGRID.dds
