@@ -1,0 +1,19 @@
+# 1 Raven's Nest
+File = bgmme37
+IsLoop = 1
+LoopPos = 00.451
+
+# 2 Blood Heat!!
+File = bgmme26
+IsLoop = 1
+LoopPos = 04.786
+
+# 3 Gigantic Power
+File = bgmme44
+IsLoop = 1
+LoopPos = 33.600
+
+# 4 Melty Blood -TRIBREATH-
+File = MBtribreath
+IsLoop = 1
+LoopPos = 00.000

@@ -1,0 +1,224 @@
+local tmp = [];
+
+
+	// local ret_param = 
+	// {
+		// title = "",
+		// skilltype = 0,
+		// startpos = 0,
+		// ko = 0,
+		// hptype = 0,
+		// exstype = 0,
+		// enemytype = 0,
+		// resettype = 0,
+		// grdtype = 0,
+		// player = 0,
+		// enemy = 0,// ?Å}?e?d?Åe?Å·?ÅE?|?A?`?F?b?N
+		// viewtype = 0, // ?i?^
+		// skillcount = 0,
+		// skill = [],
+		// explanation = "",
+		// category = 0,
+		// filter = 0,
+		// startdistance = 0,
+		// recover_air = 1,
+		// recover_ground = 1,
+		// recover_emergency = 1,
+		// stringID = "",
+		// enemyguard = 0,
+		// endtype = 1, // ÅfB?Å ???IÅgR?i?YÅfe ?pÅeÅ}?ÅE?e?i?U?W?I???Z?b?g?j
+		// dbg_recipe = 0,
+		// counterhit = 0, //1:?J?E?Åg?^?[?@2:?ÅÒ?Åg?_???J?E?Åg?^?[
+		// saveslot = -1, // -1:?cÅgR
+	// };
+	
+	
+		// local pos = ("pos" in param)? param.pos : 0;
+	// local gauge = ("gauge" in param)? param.gauge : 0;
+	// local enemy = ("enemy" in param)? param.enemy : 0;
+	// local enemy_chr = ("enemy_chr" in param)? param.enemy_chr : -1;
+	// local cat = ("cat" in param)? param.cat : 0;
+	// local fil = ("fil" in param)? param.fil : 0;
+	// local title = ("title" in param)? param.title : "";
+	// local start = ("start" in param)? param.start : 0;
+	// local start_csv = ("start_csv" in param)? param.start_csv : 0; // csv?E?a?estart?O?ÅhÅfe?`?d?c?E?s?-
+	// local end = ("end" in param)? param.end : 0;
+	// local expl = ("expl" in param)? param.expl : 0;
+	// local poin = ("poin" in param)? param.poin : 0;
+	// local hint = ("hint" in param)? param.hint : 0;
+	// local step = ("step" in param)? param.step : 0;
+	// local player = ("player" in param)? param.player : 0;
+	// local stringID = ("stringID" in param)? param.stringID : 0;
+	// local tag = ("tag" in param)? param.tag : [];
+	// local skilltype = ("skilltype" in param)? param.skilltype : 0;
+	// local endtype = ("endtype" in param)? param.endtype : 1;
+	// local viewtype = ("viewtype" in param)? param.viewtype : 0;
+	// local num = ("num" in param)? param.num : 0; // ÅÒp?eÅhA?c?cÅfCÅÒA
+	// local saveslot = ("saveslot" in param)? param.saveslot : -1;
+	
+
+
+// Def_TCName_BNB <- sqfunc.GetExStringText("tutorial_define_tcn000");
+// Def_TCName_BNBLv0 <- sqfunc.GetExStringText("tutorial_define_tcn000");
+// Def_TCName_BNBLv1 <- sqfunc.GetExStringText("tutorial_define_tcn000");
+// Def_TCName_BNBLv2 <- sqfunc.GetExStringText("tutorial_define_tcn000");
+// Def_TCName_BNBLv3 <- sqfunc.GetExStringText("tutorial_define_tcn000");
+// Def_TCName_SkillCheck <- sqfunc.GetExStringText("tutorial_define_tcn005");
+// Def_TCName_Level0 <- sqfunc.GetExStringText("tutorial_define_tcn006");
+// Def_TCName_Level1 <- sqfunc.GetExStringText("tutorial_define_tcn007");
+// Def_TCName_Level2 <- sqfunc.GetExStringText("tutorial_define_tcn008");
+// Def_TCName_Level3 <- sqfunc.GetExStringText("tutorial_define_tcn009");
+// Def_TCName_Level3_2 <- sqfunc.GetExStringText("tutorial_define_tcn009"); //190121ÅfCÅÒA
+// Def_TCName_TacticsLv1 <- sqfunc.GetExStringText("tutorial_define_tcn010");
+// Def_TCName_TacticsLv2 <- sqfunc.GetExStringText("tutorial_define_tcn011");
+// Def_TCName_TacticsLv3 <- sqfunc.GetExStringText("tutorial_define_tcn012");
+
+// Def_TCInfo_BNBLv0 <- sqfunc.GetExStringText("tutorial_define_tci000");
+// Def_TCInfo_BNBLv1 <- sqfunc.GetExStringText("tutorial_define_tci001");
+// Def_TCInfo_BNBLv2 <- sqfunc.GetExStringText("tutorial_define_tci002");
+// Def_TCInfo_BNBLv3 <- sqfunc.GetExStringText("tutorial_define_tci003");
+// Def_TCInfo_Level0 <- sqfunc.GetExStringText("tutorial_define_tci004");
+// Def_TCInfo_Level1 <- sqfunc.GetExStringText("tutorial_define_tci005");
+// Def_TCInfo_Level2 <- sqfunc.GetExStringText("tutorial_define_tci006");
+// Def_TCInfo_Level3 <- sqfunc.GetExStringText("tutorial_define_tci007");
+// Def_TCInfo_Level3_2 <- sqfunc.GetExStringText("tutorial_define_tci027"); //190121ÅfCÅÒA
+// Def_TCInfo_TacticsLv1 <- sqfunc.GetExStringText("tutorial_define_tci008");
+// Def_TCInfo_TacticsLv2 <- sqfunc.GetExStringText("tutorial_define_tci009");
+// Def_TCInfo_TacticsLv3 <- sqfunc.GetExStringText("tutorial_define_tci010");
+// Def_TCInfo_SkillCheck <- sqfunc.GetExStringText("tutorial_define_tci011");
+
+// Def_TCInfo_Title_Rampage <- sqfunc.GetExStringText("tutorial_define_tci012");
+// Def_TCInfo_Title_Overhead <- sqfunc.GetExStringText("tutorial_define_tci013");
+// Def_TCInfo_Title_Low <- sqfunc.GetExStringText("tutorial_define_tci014");
+// Def_TCInfo_Title_TwoSides <- sqfunc.GetExStringText("tutorial_define_tci015");
+// Def_TCInfo_Title_Throw <- sqfunc.GetExStringText("tutorial_define_tci016");
+// Def_TCInfo_Title_Poke <- sqfunc.GetExStringText("tutorial_define_tci017");
+// Def_TCInfo_Title_CommandThrow <- sqfunc.GetExStringText("tutorial_define_tci018");
+// Def_TCInfo_Title_Punishment <- sqfunc.GetExStringText("tutorial_define_tci019");
+// Def_TCInfo_Title_RampageSmash <- sqfunc.GetExStringText("tutorial_define_tci020");
+// Def_TCInfo_Title_Dying <- sqfunc.GetExStringText("tutorial_define_tci021");
+// Def_TCInfo_Title_CVO <- sqfunc.GetExStringText("tutorial_define_tci021");
+// Def_TCInfo_Title_UseGauge <- sqfunc.GetExStringText("tutorial_define_tci021");
+// Def_TCInfo_Title_Antiair <- sqfunc.GetExStringText("tutorial_define_tci024");
+// Def_TCInfo_Title_Reversal <- sqfunc.GetExStringText("tutorial_define_tci025");
+// Def_TCInfo_Title_VOInsert <- sqfunc.GetExStringText("tutorial_define_tci026");
+
+// Def_Tactics_Title_Footsies <- sqfunc.GetExStringText("tutorial_define_tat000");
+// Def_Tactics_Title_Sequence <- sqfunc.GetExStringText("tutorial_define_tat001");
+// Def_Tactics_Title_Mixup <- sqfunc.GetExStringText("tutorial_define_tat002");
+// Def_Tactics_Title_TwoSides <- sqfunc.GetExStringText("tutorial_define_tat003");
+// Def_Tactics_Title_Throw <- sqfunc.GetExStringText("tutorial_define_tat004");
+// Def_Tactics_Title_CommandThrow <- sqfunc.GetExStringText("tutorial_define_tat005");
+// Def_Tactics_Title_Invincible <- sqfunc.GetExStringText("tutorial_define_tat006");
+// Def_Tactics_Title_Antiair <- sqfunc.GetExStringText("tutorial_define_tat007");
+// Def_Tactics_Title_BallInvincible <- sqfunc.GetExStringText("tutorial_define_tat008");
+
+// Def_TCInfo_Expl_FastPushBack <- sqfunc.GetExStringText("tutorial_define_tcie000");
+// Def_TCInfo_Expl_PokePushBack <- sqfunc.GetExStringText("tutorial_define_tcie001");
+// Def_TCInfo_Expl_PokePushBack_Rampage <- sqfunc.GetExStringText("tutorial_define_tcie002");
+// Def_TCInfo_Expl_PokePushBack_UseEX <- sqfunc.GetExStringText("tutorial_define_tcie003");
+// Def_TCInfo_Expl_PokePushBack_UseIW <- sqfunc.GetExStringText("tutorial_define_tcie004");
+// Def_TCInfo_Expl_UseAerial <- sqfunc.GetExStringText("tutorial_define_tcie005");
+
+// Def_TCInfo_Expl_Rampage <- sqfunc.GetExStringText("tutorial_define_tcie006");
+// Def_TCInfo_Expl_Assault <- sqfunc.GetExStringText("tutorial_define_tcie007");
+// Def_TCInfo_Expl_Poke <- sqfunc.GetExStringText("tutorial_define_tcie008");
+// Def_TCInfo_Expl_Overhead <- sqfunc.GetExStringText("tutorial_define_tcie009");
+// Def_TCInfo_Expl_Low <- sqfunc.GetExStringText("tutorial_define_tcie010");
+// Def_TCInfo_Expl_TwoSides <- sqfunc.GetExStringText("tutorial_define_tcie011");
+// Def_TCInfo_Expl_Throw <- sqfunc.GetExStringText("tutorial_define_tcie012");
+// Def_TCInfo_Expl_CommandThrow <- sqfunc.GetExStringText("tutorial_define_tcie013");
+// Def_TCInfo_Expl_Punishment <- sqfunc.GetExStringText("tutorial_define_tcie014");
+// Def_TCInfo_Expl_UseGauge <- sqfunc.GetExStringText("tutorial_define_tcie015");
+// Def_TCInfo_Expl_CVO <- sqfunc.GetExStringText("tutorial_define_tcie016");
+// Def_TCInfo_Expl_Dying <- sqfunc.GetExStringText("tutorial_define_tcie017");
+// Def_TCInfo_Expl_RampageSmash <- sqfunc.GetExStringText("tutorial_define_tcie018");
+// Def_TCInfo_Expl_Antiair <- sqfunc.GetExStringText("tutorial_define_tcie019");
+// Def_TCInfo_Expl_Reversal <- sqfunc.GetExStringText("tutorial_define_tcie020");
+// Def_TCInfo_Expl_VOInsert <- sqfunc.GetExStringText("tutorial_define_tcie021");
+// Def_TCInfo_Expl_ChangePosSide <- sqfunc.GetExStringText("tutorial_define_tcie024");
+// Def_TCInfo_Expl_CarryingEnemy <- sqfunc.GetExStringText("tutorial_define_tcie025");
+// Def_TCInfo_Expl_WhiffEnemyThrow <- sqfunc.GetExStringText("tutorial_define_tcie026");
+// Def_TCInfo_Expl_TrapStart <- sqfunc.GetExStringText("tutorial_define_tcie027");
+
+// Def_TCInfo_Expl_SkillTactics <- sqfunc.GetExStringText("tutorial_define_tcie022");
+// Def_TCInfo_Expl_BattleTactics <- sqfunc.GetExStringText("tutorial_define_tcie023");
+
+// enemy = "",
+// óß mid
+// ã¸ low
+
+// pos = "",
+
+// none Super Close
+
+
+// í[ Corner Close
+// í[î˜ãﬂ Corner Away
+// í[î˜âì Corner Midway
+// í[âì Corner Far
+// í[îwïâÇ¢ Cornered Close
+// ëŒãÛ cLOSE???
+// íÜâõ Super Close
+// î˜ãﬂ Close
+
+// î˜íÜ Medium
+// î˜âì Medium (just a tiny bit farther)
+
+// íÜâõî˜âì also close??
+// ãﬂãóó£ Close?
+// íÜâõãﬂ Same as Close?
+// íÜãóó£ Round Start
+// âìãóó£ Fullscreen
+// íÜâõíÜãóó£ Farther
+// íÜâõâì Fullscreen
+
+// { tmp.append( {
+    // title=Def_TCInfo_Title_VOInsert,
+    // cat=Def_TCNum_Level3,
+	// gauge = "DCVO",
+    // enemy = "ã¸",
+    // stringID="rie_lv1_missioncombo1",
+    // expl = Def_TCInfo_Expl_CVO,
+    // skill={ recipe = ["iJC","B","2B","6B","C","2C","214A","CVO","i6B","i236B","66","66C","22EX","66","iFF","_28EX"] }, } );
+// }
+
+{	tmp.append( {
+    title=Def_TCInfo_Title_Rampage,
+    cat=Def_TCNum_Level3,
+	gauge = "DCVO",
+    enemy = "ã¸",
+    stringID="rie_lv1_missioncombo1",
+    expl = Def_TCInfo_Expl_CVO,
+    skill={ recipe = ["iJC","B","2B","6B","C","2C","214A","CVO","i6B","i236B","66","66C","22EX","66","iFF","236EX"] }, } );
+}
+
+// {	tmp.append( { title=Def_TCName_BNBLv0,
+	// cat=Def_TCNum_Level0,
+// gauge = "DCVO",	stringID="rie_lv0_missioncombo_1",
+	// expl = Def_TCInfo_Expl_FastPushBack,
+    // skill={ recipe = ["iJC","B","2B","6B","C","2C","214A","CVO","i236B","66","66C","22EX","66","iFF","28EX","2C","236A"] },
+// } );
+// }
+
+Table  <- GetMissionListTable(); // É~ÉbÉVÉáÉìÇÃÉJÉeÉSÉäÅ[ÇÃíËã`ÇÕã§í 
+
+local skillParam = 
+{
+	charaNo = Def_ChrNo_Rie,
+}
+
+Table.listcount = tmp.len();
+Table.list.resize( Table.listcount );
+for( local i=0; i<tmp.len(); i++ )
+{
+	if( "skill" in tmp[i] )
+	{
+		tmp[i].skill.param <- skillParam;
+	}
+	tmp[i].player <- Def_ChrNo_Rie;
+	tmp[i].num <- i;
+	local skillTable = GetSkillCheckTable( tmp[i] );
+	Table.list[i] = skillTable;
+}
+

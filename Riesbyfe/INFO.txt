@@ -1,0 +1,7 @@
+charaName = Riesbyfe
+nameInternal = Ries
+//stage = 1
+bgm = bgmme37
+bgmLoop = 1
+LoopPos = 00.451
+numerics = grpdat\Cockpit\chara\gauge_chrRIES.dds|grpdat\Network\csv\chat_se\chat_se_RIES.csv|grpdat\Network\new\net_chr\net_chrRIES.pat|grpdat\Network\new\prof_chr\prof_chrRIES.pat|___English\grpdat\CSel\characs_chrRIES.pat|System\str_jp\stringfile_ries.csv
