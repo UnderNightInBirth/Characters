@@ -7,4 +7,4 @@ Modded Characters for Under-Night-In-Birth
 
 ##### Other
 
- - [ReallyReal's Hyde Port / Nanaya Edit (MBTL)](https://github.com/ReallyRealer/Hyde-EX-Edmond-Dantes-Port-Mod "ReallyReal's Hyde EX / Edmond Dantes Port")
+ - [ReallyReal's Hyde Port / Nanaya Edit (MBTL)](https://github.com/ReallyRealer/Hyde-Kido-Nanaya-Shiki-Expansion-Pack "ReallyReal's Hyde EX / Edmond Dantes Port")
